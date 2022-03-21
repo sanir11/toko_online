@@ -12,7 +12,9 @@
           <div class="card-body">
             <h4>{{ produk.nama }}</h4>
             <h4>Rp{{ produk.harga }}</h4>
-            <a :href="produk.link_external" class="btn btn-danger btn-block">beli</a>
+            <!-- tombol pesan -->
+            <a v-if="produk.stok > 0" :href="produk.link_eksternal" target="_blank" class="btn btn-danger btn-block">beli</a>
+            <a v-else href="#" class="disable btn btn-drak btn-block">habis terjual</a>
           </div>
         </div>
       </div>
